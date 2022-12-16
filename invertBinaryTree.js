@@ -26,21 +26,17 @@
 };
 
 // ITERATIVE SOLUTION
-//  var invertTree = function(root) {
-//   if (!root || (!root.left && !root.right)) return root;
+// var invertTree = function(root) {
+//   const stack = [];
+//   if (root) stack.push(root);
 
-//   let currentNode = root;
-//   let queue = [currentNode];
+//   while (stack.length > 0) {
+//       const node = stack.pop();
 
-//   while (queue.length > 0) {
-//       if (currentNode !== null && (currentNode.left || currentNode.right)) {
-//           const temp = currentNode.left;
-//           currentNode.left = currentNode.right;
-//           currentNode.right = temp;
-//           queue.push(currentNode.left, currentNode.right);
-//       }
-//       queue.shift();
-//       currentNode = queue[0];
+//       if (node.left) stack.push(node.left);
+//       if (node.right) stack.push(node.right);
+
+//       [node.left, node.right] = [node.right, node.left];
 //   }
 
 //   return root;
